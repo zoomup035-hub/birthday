@@ -2613,7 +2613,7 @@ function initLetterInteraction() {
             if (typeof Typed !== 'undefined') {
                 new Typed('#textContent', {
                     strings: [
-                        "Dear [Name],<br><br>Happy Birthday! 😍<br>Wishing you endless happiness, success, and beautiful moments as you step into another wonderful year of your life. 🥳🎉🎂 You are not just a friend but a very special blessing, and I hope this year brings you countless reasons to smile and celebrate.<br><br>اللّٰهُمَّ اجْعَلْ عُمْرَهَا بَرَكَةً وَرِزْقًا وَسَعَادَةً، وَاحْفَظْهُ مِنْ كُلِّ شَرٍّ وَبَلَاءٍ۔ آمِين۔<br><br>اللہ تعالیٰ تمہیں لمبی عمر، اچھی صحت، کامیابی اور خوشیوں بھری زندگی عطا فرمائے۔ آمین 🤲<br><br>May all your dreams come true and may your life always be filled with love, peace, and prosperity.<br><br>^500Once again, Happy Birthday! Stay blessed and keep shining.<br><br>Best Wishes,<br>[Your Name]"
+                        "Dear Warisha,<br><br>Happy Birthday! 😍<br>Wishing you endless happiness, success, and beautiful moments as you step into another wonderful year of your life. 🥳🎉🎂 You are not just a friend but a very special blessing, and I hope this year brings you countless reasons to smile and celebrate.<br><br>اللّٰهُمَّ اجْعَلْ عُمْرَهَا بَرَكَةً وَرِزْقًا وَسَعَادَةً، وَاحْفَظْهُ مِنْ كُلِّ شَرٍّ وَبَلَاءٍ۔ آمِين۔<br><br>اللہ تعالیٰ تمہیں لمبی عمر، اچھی صحت، کامیابی اور خوشیوں بھری زندگی عطا فرمائے۔ آمین 🤲<br><br>May all your dreams come true and may your life always be filled with love, peace, and prosperity.<br><br>^500Once again, Happy Birthday! Stay blessed and keep shining.<br><br>Best Wishes,<br>ZaarGull"
                     ],
                     typeSpeed: 40,
                     startDelay: 300,
@@ -2880,5 +2880,6 @@ window.addEventListener('load', () => {
         initLetterInteraction();
     }
 });
+
 
 
