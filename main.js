@@ -1944,7 +1944,7 @@ function initMemoryScene() {
     };
 
     const handleMove = (x, y) => {
-        if (!isDragging || isZoomed) return;
+        if (!isDragging) return;
         const dx = x - startX;
         const dy = y - startY;
 
@@ -2108,7 +2108,7 @@ function initMemoryScene() {
 
         // Keep zoom enabled during card focus for better readability, but disable rotation
         if (controls) {
-            controls.enableRotate = false; // Disable rotation to keep card centered
+            controls.enableRotate = true; // Enable rotation to look around
             // Zoom remains enabled so user can read card text better
         }
         obj.userData.locked = true;
@@ -2128,7 +2128,15 @@ function initMemoryScene() {
             y: 0,
             z: targetZ, // Dynamic position based on camera zoom
             duration: 1.2,
-            ease: 'power2.inOut'
+            ease: 'power2.inOut',
+            onStart: () => {
+                // Update OrbitControls target to focus on the card
+                if (controls) {
+                    // We target the final position of the card
+                    controls.target.set(0, 0, targetZ);
+                    controls.update();
+                }
+            }
         });
 
         // 3. FLIP ANIMATION (Ye wo magic part hai!)
@@ -2269,6 +2277,8 @@ function initMemoryScene() {
         // Re-enable full OrbitControls when returning to cloud view
         if (controls) {
             controls.enableRotate = true; // Re-enable rotation
+            controls.target.set(0, 0, 0); // Reset target to center of cloud
+            controls.update();
         }
 
         const obj = focusedObj;
@@ -2603,7 +2613,7 @@ function initLetterInteraction() {
             if (typeof Typed !== 'undefined') {
                 new Typed('#textContent', {
                     strings: [
-                        "Dearest,<br><br>Wishing you a day filled with laughter,<br>love, and starlight...<br><br>^500You are truly special not just today,<br>but every single day.<br><br>^500May this year bring you closer<br>to all your dreams.<br><br>^1000Happy Birthday!"
+                        "Dear [Name],<br><br>Happy Birthday! 😍<br>Wishing you endless happiness, success, and beautiful moments as you step into another wonderful year of your life. 🥳🎉🎂 You are not just a friend but a very special blessing, and I hope this year brings you countless reasons to smile and celebrate.<br><br>اللّٰهُمَّ اجْعَلْ عُمْرَهَا بَرَكَةً وَرِزْقًا وَسَعَادَةً، وَاحْفَظْهُ مِنْ كُلِّ شَرٍّ وَبَلَاءٍ۔ آمِين۔<br><br>اللہ تعالیٰ تمہیں لمبی عمر، اچھی صحت، کامیابی اور خوشیوں بھری زندگی عطا فرمائے۔ آمین 🤲<br><br>May all your dreams come true and may your life always be filled with love, peace, and prosperity.<br><br>^500Once again, Happy Birthday! Stay blessed and keep shining.<br><br>Best Wishes,<br>[Your Name]"
                     ],
                     typeSpeed: 40,
                     startDelay: 300,
