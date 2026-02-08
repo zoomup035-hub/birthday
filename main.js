@@ -2747,7 +2747,7 @@ function initFinale() {
     if (!document.querySelector('.candle-instruction')) {
         const instr = document.createElement('div');
         instr.className = 'candle-instruction';
-        instr.innerText = "Make a wish and blow out the candle!";
+        instr.innerText = "Make a wish and blow out the candle! 🎂💨(phonk maro ";
         instr.style.position = 'absolute';
         instr.style.top = '15%';
         instr.style.width = '100%';
@@ -2880,6 +2880,7 @@ window.addEventListener('load', () => {
         initLetterInteraction();
     }
 });
+
 
 
 
